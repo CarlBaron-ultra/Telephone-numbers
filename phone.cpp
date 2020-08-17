@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
     string phoneNum;
 
-    cout << "Enter a phone number. IE 4403664032" << endl;
+    cout << "Enter a phone number. IE 2168675309" << endl;
     cin >> phoneNum;    
 
     if (phoneNum.length() != 10)
@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
     }
     else
     {
-        fail:
         cout << "Phone number is not valid!" << endl;
     }
     
