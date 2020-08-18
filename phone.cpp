@@ -15,25 +15,36 @@ int main(int argc, char *argv[])
     cin >> phoneNum;    
 
     if (phoneNum.length() != 10)
-    {
+    {//if supplied input is not digits long, display error message and end program
         cout << "Invalid phone number! Number is the wrong length" << endl;
         return 0;
     }
 
+    //split phone number into three parts
     string str1 = phoneNum.substr(0,3);
     string str2 = phoneNum.substr(3,3);
-    string str3 = phoneNum.substr(5,4);
+    string str3 = phoneNum.substr(6,4);
 
+    //test each part for validity
     bool t1 = npa(str1);
     bool t2 = coc(str2); 
     bool t3 = ln(str3);
 
-    if (t1 && t2 && t3)
+    if (t1 && t2)
     {
-        cout << "Phone number is valid" << endl;
+        if(t2 && t3)
+        {
+            cout << "Phone number is valid" << endl;
+        }
+        else
+        {
+            goto fail;
+        }
+        
     }
     else
     {
+        fail:
         cout << "Phone number is not valid!" << endl;
     }
     
@@ -140,7 +151,7 @@ bool ln(string c)
     char y = c[2];
     char z = c[3];
 
-    if (w >= 48 && w <= 57)
+    if ((w >= 48) && (w <= 57))
     {
         t = true;
     }
@@ -149,7 +160,7 @@ bool ln(string c)
         goto bad;
     }
 
-    if (x >= 48 && x <= 57)
+    if ((x >= 48) && (x <= 57))
     {
         t = true;
     }
@@ -158,7 +169,7 @@ bool ln(string c)
        goto bad;
     }
 
-    if (y >= 48 && y <= 57)
+    if ((y >= 48) && (y <= 57))
     {
         t = true;
     }
@@ -167,7 +178,7 @@ bool ln(string c)
         goto bad;
     }
 
-    if (z >= 48 && z <= 57)
+    if ((z >= 48) && (z <= 57))
     {
         t = true;
     }
