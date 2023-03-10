@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//functions that test the validity of phone number
 bool npa(string a);
 bool coc(string b);
 bool ln(string c);
